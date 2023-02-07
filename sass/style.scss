@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+@import 'reset';
+@import 'mixin';
+@import 'conf';
+
+body{
+    @include general ($clr-400,$clr-300,$ff-100,$fs-100,$fw-4,$strt);
+    @include flex ($flx,$cntr,$cntr);
+
+    main{
+        background: white;
+        width: 88%;
+        border-radius: 0.3rem;
+
+        @media (min-width: 1200px) {
+            width:42%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .main-section{
+            padding-inline:1.02rem;
+            padding-block: 1.2rem;
+            @media (min-width: 1200px) {
+                grid-column: 2 span;
+            }
+
+            h1{
+                @include font ($clr-100,inherit,20px,$fw-7);
+                padding-block-end: 1.2rem;
+            }
+            h2{
+                @include font ($clr-200,inherit,$fs-100,$fw-4);
+                line-height: 1.2rem;
+                padding-block-end: 1.2rem;
+            }
+        }
+
+        .price-section{
+            padding:1.5rem;
+            background: $clr-100;
+            color:$clr-300;
+
+            h2{
+                font-size: $fs-100;
+            }
+
+            h1{
+                font-size: 2rem;
+                display: inline-block;
+                margin-block-start: 1rem;
+            }
+
+            span{
+                margin-inline-start: 1rem;
+                opacity: 0.7;
+            }
+
+            p{
+                padding-block-end: 1.2rem;
+                font-weight: 400;
+                margin-block-start: 1rem;
+
+            }
+            button{
+                width: 100%;
+                padding-block: 0.7rem;
+                border: none;
+                border-radius: 0.3rem;
+                color: $clr-300;
+                background-color: $clr-200;
+                margin-block-start: 0.6rem;
+
+            }
+        }
+
+        .about-section{
+            padding:1.5rem;
+            background-color: hsla(179, 62%, 43%, 0.7);
+            color: $clr-300;
+
+            h2{
+                font-size: $fs-100;
+                padding-block-end: 1.2rem;
+            }
+        }
+    }
+
+    footer{ 
+        padding:1rem;
+        display:flex;
+        justify-content: center;
+
+        @media (min-width: 1200px) {
+            grid-column: 2 span;
+        }
+
+        .my-profile {
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        .my-profile:hover {
+            transform: scale(2) rotatey(360deg);
+            border-radius: 0.7rem;
+            box-shadow: 0 2px 10px 2px black;
+            padding: 0.2rem 0.5rem;
+            font-style: italic;
+            font-family: cursive;
+            font-weight: 900;
+        }
+    }
+}
+    
+
